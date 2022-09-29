@@ -1,4 +1,4 @@
-package com.propertymanagement.dto;
+package com.propertymanagement.service.impl.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

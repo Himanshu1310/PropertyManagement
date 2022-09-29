@@ -1,7 +1,7 @@
-package com.propertymanagement.service;
+package com.propertymanagement.service.impl;
 
-import com.propertymanagement.converter.PropertyConvertor;
-import com.propertymanagement.dto.PropertyDto;
+import com.propertymanagement.convertor.PropertyConvertor;
+import com.propertymanagement.service.impl.dto.PropertyDto;
 import com.propertymanagement.entity.PropertyEntity;
 import com.propertymanagement.repository.PropertyRepository;
 import com.propertymanagement.service.PropertyService;
@@ -22,11 +22,11 @@ public class PropertyServiceImpl implements PropertyService {
         return null;
     }
 
-    @Override
-    public PropertyDto deleteProperty(PropertyDto propertyDto) {
-        PropertyEntity pe = propertyConvertor.convertDtoToEntity(propertyDto);
-        propertyRepository.deleteById(pe.getId());
-
-        return null;
-    }
+//    @Override
+//    public PropertyDto deleteProperty(PropertyDto propertyDto) {
+//        PropertyEntity pe = propertyConvertor.convertDtoToEntity(propertyDto);
+//        propertyRepository.deleteById(pe.getId());
+//
+//        return null;
+//    }
 }
