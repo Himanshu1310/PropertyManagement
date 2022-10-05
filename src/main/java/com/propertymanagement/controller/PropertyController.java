@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.propertymanagement.service.impl.dto.PropertyDto;
 
 @RestController
-@RequestMapping("/api/v1/property")
+//@RequestMapping("/api/v1/property")
 public class PropertyController {
 	@Autowired
 	private PropertyService propertyService;
