@@ -2,6 +2,8 @@ package com.propertymanagement.controller;
 
 import com.propertymanagement.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,9 +23,13 @@ public class PropertyController {
 		return "Hello";
 	}
 	@PostMapping("/save")
-	public PropertyDto saveProperty( @RequestBody  PropertyDto propertyDto) {
-		System.out.println(propertyDto);
-		return propertyDto;
+	public ResponseEntity<PropertyDto> saveProperty(@RequestBody  PropertyDto propertyDto) {
+		//System.out.println(propertyDto);
+		propertyDto = propertyService.saveProperty(propertyDto);
+		ResponseEntity<PropertyDto> responseEntity = new ResponseEntity<>(propertyDto, HttpStatus.ACCEPTED);
+		return responseEntity;
 	}
-
+//	public PropertyDto updateProperty(){
+//		return propertydto;
+//	}
 }
